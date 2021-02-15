@@ -42,8 +42,9 @@ class ViewController: UIViewController {
     @IBAction func playAgainButtonPressed(_ sender: UIButton) {
     }
     @IBAction func guessedLetterFieldChanged(_ sender: UITextField) {
-        let text = guessedLetterTextfield.text!
-        guessLetterButton.isEnabled = !(text.isEmpty)
+        sender.text = String(sender.text!.last ?? " ").trimmingCharacters(in: .whitespaces)
+        guessLetterButton.isEnabled = !(sender.text!.isEmpty)
+         
     }
     
     
